@@ -55,6 +55,8 @@
 
 <script>
 // Components
+import { useUserStore } from "@/stores/UserStore";
+import { mapState } from "pinia";
 
 export default {
   name: "login-view",
@@ -72,6 +74,17 @@ export default {
       passwordRules: [(v) => !!v || "Password is required"],
     };
   },
+  computed: {
+    ...mapState(useUserStore, {
+      users: "users",
+    }),
+  },
+
+  mounted() {
+    console.log("users", this.users[0].name);
+    console.log("useUserStore", useUserStore.users);
+  },
+
   methods: {
     async validate() {
       const { valid } = await this.$refs.form.validate();
