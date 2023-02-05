@@ -33,6 +33,10 @@
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12">
+                    <p class="text-error mb-0" v-show="msg !== ''">
+                      a
+                      {{ msg }}
+                    </p>
                     <v-btn
                       color="primary"
                       rounded="lg"
@@ -54,9 +58,8 @@
 </template>
 
 <script>
-// Components
 import { useUserStore } from "@/stores/UserStore";
-import { mapState } from "pinia";
+import { mapState, mapActions } from "pinia";
 
 export default {
   name: "login-view",
@@ -64,9 +67,10 @@ export default {
     return {
       showPassowrd: false,
       loginForm: {
-        user: "pokemon",
+        user: "jorge",
         password: "123456",
       },
+      msg: "",
       userRules: [
         (v) => !!v || "Name is required",
         (v) => (v && v.length <= 10) || "User must be less than 10 characters",
@@ -80,22 +84,25 @@ export default {
     }),
   },
 
-  mounted() {
-    console.log("users", this.users[0].name);
-    console.log("useUserStore", useUserStore.users);
-  },
-
   methods: {
     async validate() {
+      this.msg = "";
       const { valid } = await this.$refs.form.validate();
-      const user = "pokemon";
-      const pass = "123456";
       if (valid) {
-        if (user === this.loginForm.user && pass === this.loginForm.password) {
+        const hasAccess = !!this.users.find(
+          (user) =>
+            user.user === this.loginForm.user.trim() &&
+            user.password === this.loginForm.password.trim()
+        );
+        if (hasAccess) {
+          this.login(true);
           this.$router.push("/home");
+        } else {
+          this.msg = "The username or password is incorrect";
         }
       }
     },
+    ...mapActions(useUserStore, ["login"]),
   },
 };
 </script>

@@ -11,7 +11,7 @@
       <v-list>
         <v-list-item>
           <v-list-item-title>
-            <v-btn variant="text" to="/"> Logout </v-btn>
+            <v-btn variant="text" @click="logout"> Logout </v-btn>
           </v-list-item-title>
         </v-list-item>
       </v-list>
@@ -20,11 +20,21 @@
 </template>
 
 <script>
+import { useUserStore } from "@/stores/UserStore";
+import { mapActions } from "pinia";
 export default {
   name: "NavBar",
   props: {
     pokemon: {
       type: Object,
+    },
+  },
+  methods: {
+    ...mapActions(useUserStore, ["login"]),
+
+    logout() {
+      this.login(false);
+      this.$router.push("/");
     },
   },
 };
