@@ -6,14 +6,7 @@
     rounded="xl"
     v-if="pokemon"
   >
-    <v-btn
-      variant="text"
-      class="mt-5 btn-add-favorite"
-      title="Catch this Pokemon!"
-      @click="toggleCatchPokemon(pokemon.id)"
-    >
-      <img class="pokeball-ico" src="@/assets/images/pokeball.png" />
-    </v-btn>
+    <CatchPokemon :idPokemon="pokemon.id" :typeButton="'pokeball'" />
     <div class="pokemon-avatar mx-auto">
       <img
         class="mx-auto mt-5"
@@ -41,9 +34,7 @@
 </template>
 
 <script>
-import { useUserStore } from "@/stores/UserStore";
-import { usePokemonStore } from "@/stores/PokemonStore";
-import { mapState, mapActions } from "pinia";
+import CatchPokemon from "@/components/common/CatchPokemon.vue";
 export default {
   name: "CardPokemon",
   props: {
@@ -51,18 +42,7 @@ export default {
       type: Object,
     },
   },
-  computed: {
-    ...mapState(useUserStore, {
-      userLogin: "userLogin",
-    }),
-  },
-  methods: {
-    ...mapActions(usePokemonStore, ["catch"]),
-
-    toggleCatchPokemon(idPokemon) {
-      this.catch(this.userLogin.id, idPokemon);
-    },
-  },
+  components: { CatchPokemon },
 };
 </script>
 
@@ -76,24 +56,5 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.pokemon-avatar img:hover {
-  width: 95% !important;
-}
-.pokeball-ico {
-  width: 20px;
-  height: 20px;
-}
-
-.btn-add-favorite {
-  position: absolute;
-  right: -10px;
-  top: -15px;
-}
-
-.btn-add-favorite img:hover {
-  width: 22px;
-  height: 22px;
 }
 </style>

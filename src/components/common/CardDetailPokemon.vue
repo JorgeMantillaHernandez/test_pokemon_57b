@@ -17,7 +17,7 @@
             />
             <p class="text-subtitle-1"># {{ pokemon.id }}</p>
             <h1 class="text-h4 text-uppercase">{{ pokemon.name }}</h1>
-            <v-btn color="primary" class="mt-8"> CATCH this Pokemon! </v-btn>
+            <CatchPokemon :idPokemon="pokemon.id" :typeButton="'detail'" />
           </div>
         </v-col>
         <v-col cols="7" offset="1">
@@ -104,31 +104,38 @@
   </v-card>
   <v-row>
     <v-col cols="8" class="d-flex justify-space-between mx-auto">
-      <v-btn
-        color="red"
-        rounded="xl"
-        class="ml-3"
-        v-if="pokemon.id > 1"
-        :to="`/pokemon/${pokemon.id - 1}`"
-      >
-        <v-icon> mdi-arrow-left-thick </v-icon>
-        PREV POKEMON
-      </v-btn>
-      <v-btn
-        color="red"
-        rounded="xl"
-        class="mr-3"
-        v-if="pokemon.id < 600"
-        :to="`/pokemon/${pokemon.id + 1}`"
-      >
-        NEXT POKEMON
-        <v-icon> mdi-arrow-right-thick </v-icon>
-      </v-btn>
+      <v-row>
+        <v-col cols="6" class="text-left">
+          <v-btn
+            color="red"
+            rounded="xl"
+            class="ml-3"
+            v-if="pokemon.id > 1"
+            :to="`/pokemon/${pokemon.id - 1}`"
+          >
+            <v-icon> mdi-arrow-left-thick </v-icon>
+            PREV POKEMON
+          </v-btn>
+        </v-col>
+        <v-col cols="6" class="text-right">
+          <v-btn
+            color="red"
+            rounded="xl"
+            class="mr-3"
+            v-if="pokemon.id < 600"
+            :to="`/pokemon/${pokemon.id + 1}`"
+          >
+            NEXT POKEMON
+            <v-icon> mdi-arrow-right-thick </v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-col>
   </v-row>
 </template>
 
 <script>
+import CatchPokemon from "@/components/common/CatchPokemon.vue";
 export default {
   name: "CardDetailPokemon",
   props: {
@@ -136,6 +143,7 @@ export default {
       type: Object,
     },
   },
+  components: { CatchPokemon },
 };
 </script>
 

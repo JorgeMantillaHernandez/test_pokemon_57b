@@ -39,9 +39,13 @@ export default {
   },
   methods: {
     fetchPokemon(pokemonId) {
-      getPokemon(pokemonId).then((result) => {
-        this.pokemon = result;
-      });
+      if (pokemonId > 600) {
+        this.$router.push("/error");
+      } else {
+        getPokemon(pokemonId).then((result) => {
+          this.pokemon = result;
+        });
+      }
     },
   },
 };
