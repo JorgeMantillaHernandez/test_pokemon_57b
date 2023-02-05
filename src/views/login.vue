@@ -12,12 +12,14 @@
                   <v-col cols="12" class="mt-7">
                     <v-text-field
                       v-model="loginForm.user"
+                      :append-icon="'mdi-help'"
                       :rules="userRules"
                       label="User"
                       required
                       autofocus
                       density="compact"
                       variant="outlined"
+                      @click:append="dialogUsers = true"
                     ></v-text-field>
                   </v-col>
                   <v-col cols="12">
@@ -55,6 +57,28 @@
       </v-col>
     </v-row>
   </v-container>
+  <v-dialog v-model="dialogUsers" class="mt-15">
+    <v-card width="380" height="195" class="mx-auto">
+      <v-card-text>
+        <h3>
+          USER LIST <span class="text-subtitle-1">(case sensitive) </span>
+        </h3>
+        <p class="mb-3">
+          <b> Each user can catch their own pokemon </b>
+        </p>
+
+        <p><b>Users:</b> jorge - juan - ana</p>
+        <p><b>password for anyone:</b> 123456</p>
+        <v-btn
+          class="mt-4"
+          size="small"
+          color="primary"
+          @click="dialogUsers = false"
+          >close</v-btn
+        >
+      </v-card-text>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
@@ -65,6 +89,7 @@ export default {
   name: "login-view",
   data() {
     return {
+      dialogUsers: false,
       showPassowrd: false,
       loginForm: {
         user: "jorge",
