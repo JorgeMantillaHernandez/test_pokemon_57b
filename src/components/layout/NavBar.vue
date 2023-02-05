@@ -1,7 +1,15 @@
 <template>
   <v-app-bar color="white" elevation="0" class="pb-3">
-    <v-img src="../src/assets/images/logo.png" />
-    <img class="mypokemons-icon mt-2" src="/src/assets/images/pokeball.png" />
+    <router-link to="/home" class="mx-auto">
+      <img class="logo" src="/src/assets/images/logo.png" />
+    </router-link>
+    <router-link to="/mypokemons">
+      <img
+        class="mypokemons-icon mt-n3"
+        src="/src/assets/images/pokeball.png"
+        title="Yor Pokemons!"
+      />
+    </router-link>
 
     <v-menu>
       <template v-slot:activator="{ props }">
@@ -10,8 +18,12 @@
 
       <v-list>
         <v-list-item>
-          <v-list-item-title>
-            <v-btn variant="text" @click="logout"> Logout </v-btn>
+          <v-list-item-title class="text-center">
+            <p>Hi {{ userLogin.name }}</p>
+            <hr class="mb-4" />
+          </v-list-item-title>
+          <v-list-item-title class="text-center">
+            <v-btn variant="text" color="red" @click="logout"> Logout </v-btn>
           </v-list-item-title>
         </v-list-item>
       </v-list>
@@ -21,13 +33,18 @@
 
 <script>
 import { useUserStore } from "@/stores/UserStore";
-import { mapActions } from "pinia";
+import { mapState, mapActions } from "pinia";
 export default {
   name: "NavBar",
   props: {
     pokemon: {
       type: Object,
     },
+  },
+  computed: {
+    ...mapState(useUserStore, {
+      userLogin: "userLogin",
+    }),
   },
   methods: {
     ...mapActions(useUserStore, ["login"]),
@@ -41,6 +58,12 @@ export default {
 </script>
 
 <style>
+.logo {
+  width: auto;
+  height: 65px;
+  margin-top: 15px;
+}
+
 .user-icon {
   width: 60px;
   height: 60px;

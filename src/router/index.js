@@ -3,6 +3,7 @@ import { useUserStore } from '../stores/UserStore'
 
 import login from "../views/login.vue";
 import home from "../views/home.vue";
+import mypokemons from "../views/mypokemons.vue";
 import pokemon from "../views/pokemon.vue";
 import error from "../views/error.vue";
 
@@ -23,6 +24,13 @@ const router = createRouter({
       path: "/home",
       name: "home-view",
       component: home,
+      meta: {requiresAuth: true}
+    },
+
+    {
+      path: "/mypokemons",
+      name: "mypokemons-view",
+      component: mypokemons,
       meta: {requiresAuth: true}
     },
 

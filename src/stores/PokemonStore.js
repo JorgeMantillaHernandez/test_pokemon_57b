@@ -7,6 +7,7 @@ export const usePokemonStore = defineStore("PokemonStore", {
       userPokemons: useStorage('pokemons', [])
     }
   },
+  
   actions: {
     catch(userId, pokemonId) {      
       const pokemon = this.userPokemons.findIndex(
