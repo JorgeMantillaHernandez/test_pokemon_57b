@@ -8,20 +8,18 @@ export const usePokemonStore = defineStore("PokemonStore", {
     }
   },
   actions: {
-    catch(user, pokemonId) {
-      
+    catch(userId, pokemonId) {      
       const pokemon = this.userPokemons.findIndex(
           (pokemon) =>
-            pokemon.user === user &&
+            pokemon.userId === userId &&
             pokemon.pokemonId === pokemonId
       );      
       
       if (pokemon === -1) { // not catched
-        this.userPokemons.push({'user': user, 'pokemonId': pokemonId })
+        this.userPokemons.push({'userId': userId, 'pokemonId': pokemonId })
       } else {  
         this.userPokemons.splice(pokemon, 1)
       } 
-
     },
     
  }

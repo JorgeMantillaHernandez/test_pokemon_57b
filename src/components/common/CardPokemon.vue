@@ -41,8 +41,9 @@
 </template>
 
 <script>
+import { useUserStore } from "@/stores/UserStore";
 import { usePokemonStore } from "@/stores/PokemonStore";
-import { mapActions } from "pinia";
+import { mapState, mapActions } from "pinia";
 export default {
   name: "CardPokemon",
   props: {
@@ -50,11 +51,16 @@ export default {
       type: Object,
     },
   },
+  computed: {
+    ...mapState(useUserStore, {
+      userLogin: "userLogin",
+    }),
+  },
   methods: {
     ...mapActions(usePokemonStore, ["catch"]),
 
     toggleCatchPokemon(idPokemon) {
-      this.catch("jorge", idPokemon);
+      this.catch(this.userLogin.id, idPokemon);
     },
   },
 };
