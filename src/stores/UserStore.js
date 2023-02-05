@@ -6,13 +6,16 @@ export const useUserStore = defineStore("UserStore", {
   state: () => {
     return {
       users: users,
-      userLogin: useStorage('false')
+      userLogin: useStorage('login', []),
+      log : false
     }
   },
+  getters: {
+    hasLogin: (state) => JSON.stringify(state.userLogin) !== "{}"
+  },
   actions: {
-    login(value) {
-      this.userLogin = value
-      console.log("llego", this.userLogin)
+    login(user) {
+      this.userLogin = user      
    }
  }
 

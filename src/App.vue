@@ -21,13 +21,5 @@ export default {
       userLogin: "userLogin",
     }),
   },
-  created() {
-    if (this.userLogin === "false") {
-      this.$router.push("/");
-    }
-    if (this.userLogin === "true" && this.$route.fullPath === "/") {
-      this.$router.push("/home");
-    }
-  },
 };
 </script>

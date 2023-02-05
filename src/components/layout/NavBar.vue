@@ -33,7 +33,7 @@ export default {
     ...mapActions(useUserStore, ["login"]),
 
     logout() {
-      this.login(false);
+      this.login({});
       this.$router.push("/");
     },
   },

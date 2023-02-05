@@ -10,6 +10,7 @@
       variant="text"
       class="mt-5 btn-add-favorite"
       title="Catch this Pokemon!"
+      @click="toggleCatchPokemon(pokemon.id)"
     >
       <img class="pokeball-ico" src="@/assets/images/pokeball.png" />
     </v-btn>
@@ -40,11 +41,20 @@
 </template>
 
 <script>
+import { usePokemonStore } from "@/stores/PokemonStore";
+import { mapActions } from "pinia";
 export default {
   name: "CardPokemon",
   props: {
     pokemon: {
       type: Object,
+    },
+  },
+  methods: {
+    ...mapActions(usePokemonStore, ["catch"]),
+
+    toggleCatchPokemon(idPokemon) {
+      this.catch("jorge", idPokemon);
     },
   },
 };

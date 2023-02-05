@@ -136,15 +136,6 @@ export default {
       type: Object,
     },
   },
-  created() {
-    console.log(this.pokemon);
-  },
-  watch: {
-    // call the method if the route changes
-    $route: {
-      immediate: true, // runs immediately with mount() instead of calling method on mount hook
-    },
-  },
 };
 </script>
 

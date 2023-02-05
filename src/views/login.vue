@@ -89,13 +89,13 @@ export default {
       this.msg = "";
       const { valid } = await this.$refs.form.validate();
       if (valid) {
-        const hasAccess = !!this.users.find(
+        const user = this.users.find(
           (user) =>
             user.user === this.loginForm.user.trim() &&
             user.password === this.loginForm.password.trim()
         );
-        if (hasAccess) {
-          this.login(true);
+        if (user) {
+          this.login(user);
           this.$router.push("/home");
         } else {
           this.msg = "The username or password is incorrect";
