@@ -44,7 +44,6 @@ export default {
     },
   },
   mounted() {
-    console.log("no entro aqui");
     this.getMyPokemons();
   },
   methods: {
@@ -59,7 +58,6 @@ export default {
       const pokemonsListByUser = this.userPokemons.filter(
         (pokemon) => pokemon.userId === this.userLogin.id
       );
-      console.log("pokemonsListByUser", pokemonsListByUser);
       pokemonsListByUser.forEach((pokemon) => {
         this.getPokemon(pokemon.pokemonId);
       });

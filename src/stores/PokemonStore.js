@@ -4,7 +4,8 @@ export const usePokemonStore = defineStore("PokemonStore", {
   
   state: () => {
     return {      
-      userPokemons: useStorage('pokemons', [])
+      userPokemons: useStorage('pokemons', []),
+      allPokemons: useStorage('allPokemons',[])
     }
   },
   
@@ -21,6 +22,10 @@ export const usePokemonStore = defineStore("PokemonStore", {
       } else {  
         this.userPokemons.splice(pokemon, 1)
       } 
+    },
+
+    setAllPokemons(data) {      
+      this.allPokemons = data
     },
     
  }
