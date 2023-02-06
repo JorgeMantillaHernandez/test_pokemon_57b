@@ -5,8 +5,7 @@ Jorge Mantilla 57block Vue Test
 ## Previe
 
 Loing
-
-![](git/login.gif)
+![til](./git/login.gif)
 
 
 ## Project Setup
