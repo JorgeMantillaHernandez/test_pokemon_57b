@@ -4,7 +4,7 @@ Jorge Mantilla 57block Vue Test
 
 ## Preview
 
-Loing
+Login
 ![login](https://user-images.githubusercontent.com/65055035/217000364-823ad8d2-fe51-4589-9e44-3f6426f71735.gif)
 
 Site navigation
@@ -19,7 +19,7 @@ Login and catch Pokemon with different users
 Search pokemon
 ![search](https://user-images.githubusercontent.com/65055035/217001872-310c4ee8-2578-459b-864f-771b068f790f.gif)
 
-Responsive mode
+Responsive mode/
 ![responsive](https://user-images.githubusercontent.com/65055035/217001985-5c5a2114-a288-4b41-8c6e-f5f46254e756.gif)
 
 StoryBook
@@ -42,6 +42,12 @@ npm run dev
 
 ```sh
 npm run build
+```
+
+### Compiles for production
+
+```
+npm run serve
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
