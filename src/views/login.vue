@@ -1,10 +1,10 @@
 <template>
-  <v-container class="text-center xxx" fluid="">
+  <v-container class="text-center bg-login" fluid="">
     <v-row>
-      <v-col cols="6" class="mt-15 mx-auto">
-        <div class="card-login">
+      <v-col cols="12" md="6" class="mt-15 mx-auto">
+        <div class="card-login mx-auto">
           <img class="pikachu" src="@/assets/images/pikachu.png" />
-          <v-card width="350" height="380" class="mx-auto">
+          <v-card width="100%" height="380" class="mx-auto">
             <v-card-text class="px-5">
               <p class="text-h3 mt-7 ml-n7">LOGIN</p>
               <v-form ref="form">
@@ -58,7 +58,7 @@
     </v-row>
   </v-container>
   <v-dialog v-model="dialogUsers" class="mt-15">
-    <v-card width="380" height="195" class="mx-auto">
+    <v-card width="auto" height="215" class="mx-auto">
       <v-card-text>
         <h3>
           USER LIST <span class="text-subtitle-1">(case sensitive) </span>
@@ -132,7 +132,7 @@ export default {
 };
 </script>
 <style>
-.xxx {
+.bg-login {
   background-image: radial-gradient(
     circle,
     #e43b47,
@@ -146,14 +146,15 @@ export default {
 }
 
 .card-login {
-  position: relative;
+  width: 320px;
+  position: relative !important;
   margin-top: 80px;
 }
 
 .pikachu {
-  width: 170px;
+  width: 140px;
   position: absolute;
-  left: 140px;
+  left: 0;
   top: -100px;
   z-index: 10000000;
 }

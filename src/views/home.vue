@@ -16,7 +16,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="10" md="6" class="mx-auto">
+      <v-col cols="12" sm="10" md="8" lg="6" class="mx-auto">
         <v-pagination
           v-model="page"
           :length="30"

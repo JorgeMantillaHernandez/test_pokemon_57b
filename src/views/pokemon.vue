@@ -1,7 +1,7 @@
 <template>
   <v-container class="text-center" fluid="">
     <v-row>
-      <v-col cols="12">
+      <v-col cols="12" sm="7" md="12" lg="10" xl="8" class="mx-auto mt-5">
         <CardDetailPokemon
           :pokemon="pokemon"
           v-if="pokemon"

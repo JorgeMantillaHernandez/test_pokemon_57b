@@ -1,18 +1,12 @@
 <template>
-  <v-card
-    width="65%"
-    height="540px"
-    class="d-inline-block mx-5 my-5"
-    rounded="xl"
-    v-if="pokemon"
-  >
+  <v-card width="100%" height="auto" rounded="xl" v-if="pokemon">
     <v-card-text>
       <v-row>
-        <v-col cols="4" class="fill-height">
+        <v-col cols="12" md="4" class="fill-height">
           <div class="pokemon-avatar mx-auto">
             <img
               v-if="pokemon.sprites"
-              class="mx-auto mt-5"
+              class="mx-auto"
               :src="pokemon.sprites.other.dream_world.front_default"
             />
             <p class="text-subtitle-1"># {{ pokemon.id }}</p>
@@ -20,9 +14,9 @@
             <CatchPokemon :idPokemon="pokemon.id" :typeButton="'detail'" />
           </div>
         </v-col>
-        <v-col cols="7" offset="1">
+        <v-col cols="12" md="7" md-offset="1">
           <v-row>
-            <v-col cols="6" class="text-left">
+            <v-col cols="12" md="6" class="text-md-left">
               <div>
                 <h2>
                   <v-icon color="red"> mdi-information-outline </v-icon>
@@ -70,7 +64,7 @@
                 </p>
               </div>
             </v-col>
-            <v-col cols="6" class="text-left">
+            <v-col cols="12" md="6" class="text-md-left">
               <h2>
                 <v-icon color="red"> mdi-lightning-bolt </v-icon>
                 STATS
@@ -79,7 +73,7 @@
                 <p
                   v-for="stat of pokemon.stats"
                   :key="stat.id"
-                  class="text-left mb-5"
+                  class="text-md-left mb-5"
                 >
                   <b>
                     {{ stat.stat.name }}
@@ -103,7 +97,7 @@
     </v-card-text>
   </v-card>
   <v-row>
-    <v-col cols="8" class="d-flex justify-space-between mx-auto">
+    <v-col cols="12" md="8" class="d-flex justify-space-between mx-auto mt-5">
       <v-row>
         <v-col cols="6" class="text-left">
           <v-btn
@@ -114,7 +108,7 @@
             :to="`/pokemon/${pokemon.id - 1}`"
           >
             <v-icon> mdi-arrow-left-thick </v-icon>
-            PREV POKEMON
+            PREVIUS
           </v-btn>
         </v-col>
         <v-col cols="6" class="text-right">
@@ -125,7 +119,7 @@
             v-if="pokemon.id < 600"
             :to="`/pokemon/${pokemon.id + 1}`"
           >
-            NEXT POKEMON
+            NEXT
             <v-icon> mdi-arrow-right-thick </v-icon>
           </v-btn>
         </v-col>
@@ -149,13 +143,11 @@ export default {
 
 <style scoped>
 .pokemon-avatar {
-  width: 80%;
-  height: 320px;
 }
 
 .pokemon-avatar img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 250px;
   object-fit: contain;
 }
 

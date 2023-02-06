@@ -1,6 +1,6 @@
 <template>
   <v-app-bar color="white" elevation="0" class="pb-3">
-    <router-link to="/home" class="mx-auto">
+    <router-link to="/home" class="mx-sm-auto">
       <img class="logo" src="/src/assets/images/logo.png" />
     </router-link>
     <router-link to="/mypokemons">
@@ -84,7 +84,7 @@ export default {
   right: 95px;
 }
 .mypokemons-icon:hover {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 }
 </style>
