@@ -1,14 +1,13 @@
 # 57blocks
 
-This template should help get you started developing with Vue 3 in Vite.
+Jorge Mantilla 57block Vue Test
 
-## Recommended IDE Setup
+## Previe
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Loing
 
-## Customize configuration
+![](git/login.gif)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
