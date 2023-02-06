@@ -46,7 +46,7 @@
                       block
                       @click="validate"
                     >
-                      LOGIN x
+                      LOGIN
                     </v-btn>
                   </v-col>
                 </v-row>
