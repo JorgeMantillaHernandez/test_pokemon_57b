@@ -1,5 +1,7 @@
 <template>
   <v-app-bar color="white" elevation="0" class="pb-3">
+    user:
+    {{ userLogin }}
     <router-link to="/home" class="mx-sm-auto">
       <img class="logo" src="/src/assets/images/logo.png" />
     </router-link>
