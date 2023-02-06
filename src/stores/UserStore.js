@@ -6,7 +6,7 @@ export const useUserStore = defineStore("UserStore", {
   state: () => {
     return {
       users: users,
-      userLogin: useStorage('login', []),
+      userLogin: useStorage('login', {}),
       log : false
     }
   },
