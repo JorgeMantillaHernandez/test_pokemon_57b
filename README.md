@@ -2,6 +2,16 @@
 
 Jorge Mantilla 57block Vue Test
 
+users: jorge - juan - ana
+
+password: 123456
+
+Each user can catch and release their own pokemons. Check our mobile version
+
+
+https://spiffy-sherbet-b2850c.netlify.app/
+
+
 ## Preview
 
 Login
