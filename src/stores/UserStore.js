@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { useStorage } from '@vueuse/core'
-import users from "@/data/users.json"
+import users from "../data/users.json"
 export const useUserStore = defineStore("UserStore", {
   
   state: () => {

@@ -1,3 +1,13 @@
+import { app } from '@storybook/vue3';
+
+import { withVuetify } from 'storybook-addon-vuetify3/dist/decorators'
+import { myCustomLightTheme } from "../src/plugins/vuetify.js";
+import { createPinia } from 'pinia';
+
+const pinia = createPinia();
+app.use(pinia);
+
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +17,18 @@ export const parameters = {
     },
   },
 }
+
+export const globalTypes = {
+  vuetify: {
+    theme: {
+      defaultTheme: 'myCustomLightTheme',
+      themes: {
+        myCustomLightTheme
+      }
+    }
+  }
+}
+
+export const decorators = [
+  withVuetify
+]

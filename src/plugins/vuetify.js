@@ -4,8 +4,10 @@ import "vuetify/styles";
 
 // Vuetify
 import { createVuetify } from "vuetify";
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-const myCustomLightTheme = {
+export const myCustomLightTheme = {
   dark: false,
   colors: {
     background: "#f4f6fc",
@@ -20,13 +22,18 @@ const myCustomLightTheme = {
   },
 };
 
-export default createVuetify({
-  theme: {
-    defaultTheme: "myCustomLightTheme",
-    themes: {
-      myCustomLightTheme,
-    },
-  },
-});
+export default createVuetify(
+  // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
+  {
+    components,
+    directives,
+    theme: {
+      defaultTheme: 'myCustomLightTheme',
+      themes: {
+        myCustomLightTheme,
+      }
+    }
+  }
+)
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides

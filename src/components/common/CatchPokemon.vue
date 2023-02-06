@@ -7,7 +7,7 @@
     :title="catched ? 'Release this Pokemon' : 'Catch this Pokemon!'"
     @click="toggleCatchPokemon(idPokemon)"
   >
-    <img class="pokeball-ico" src="@/assets/images/pokeball.png" />
+    <img class="pokeball-ico" src="../../assets/images/pokeball.png" />
   </v-btn>
   <v-btn
     v-if="typeButton === 'detail'"
@@ -18,15 +18,15 @@
     <img
       class="pokeball-ico mr-3"
       :class="catched ? '' : 'greyPokabell'"
-      src="@/assets/images/pokeball.png"
+      src="../../assets/images/pokeball.png"
     />
     {{ catched ? "RELEASE this pokemon!" : "CATCH this Pokemon!" }}
   </v-btn>
 </template>
 
 <script>
-import { useUserStore } from "@/stores/UserStore";
-import { usePokemonStore } from "@/stores/PokemonStore";
+import { useUserStore } from "../../stores/UserStore";
+import { usePokemonStore } from "../../stores/PokemonStore";
 import { mapState, mapActions } from "pinia";
 export default {
   name: "CatchPokemon",

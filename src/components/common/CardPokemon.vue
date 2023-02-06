@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import CatchPokemon from "@/components/common/CatchPokemon.vue";
+import CatchPokemon from "./CatchPokemon.vue";
 export default {
   name: "CardPokemon",
   props: {
