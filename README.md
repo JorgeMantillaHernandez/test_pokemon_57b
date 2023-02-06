@@ -55,7 +55,14 @@ npm run dev
 npm run build
 ```
 
-### Compile for production
+### Show StoryBook
+
+```sh
+npm run storybook
+```
+
+
+### Run Serve
 
 ```
 npm run serve
