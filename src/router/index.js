@@ -7,10 +7,6 @@ import mypokemons from "../views/mypokemons.vue";
 import pokemon from "../views/pokemon.vue";
 import error from "../views/error.vue";
 
-
-
-
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
