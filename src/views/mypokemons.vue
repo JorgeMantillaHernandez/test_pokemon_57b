@@ -2,6 +2,7 @@
   <v-container class="text-center" fluid="">
     <v-row>
       <v-col cols="12" md="10" lg="9" class="mt-10 mx-auto">
+        <h1 class="mb-4">My Pokemons!</h1>
         <CardPokemon
           v-for="pokemon of pokemons"
           :pokemon="pokemon"

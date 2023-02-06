@@ -3,7 +3,8 @@
     <router-link to="/home" class="mx-sm-auto">
       <img class="logo" src="/src/assets/images/logo.png" />
     </router-link>
-    <router-link to="/mypokemons">
+
+    <router-link to="/mypokemons" v-if="JSON.stringify(userLogin) !== '{}'">
       <img
         class="mypokemons-icon mt-n3"
         src="/src/assets/images/pokeball.png"
@@ -11,7 +12,7 @@
       />
     </router-link>
 
-    <v-menu>
+    <v-menu v-if="JSON.stringify(userLogin) !== '{}'">
       <template v-slot:activator="{ props }">
         <img class="user-icon" src="@/assets/images/user.png" v-bind="props" />
       </template>
