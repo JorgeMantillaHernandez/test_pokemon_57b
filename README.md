@@ -19,7 +19,8 @@ Login and catch Pokemon with different users
 Search pokemon
 ![search](https://user-images.githubusercontent.com/65055035/217001872-310c4ee8-2578-459b-864f-771b068f790f.gif)
 
-Responsive mode/
+Responsive mode
+
 ![responsive](https://user-images.githubusercontent.com/65055035/217001985-5c5a2114-a288-4b41-8c6e-f5f46254e756.gif)
 
 StoryBook
@@ -44,7 +45,7 @@ npm run dev
 npm run build
 ```
 
-### Compiles for production
+### Compile for production
 
 ```
 npm run serve
